@@ -1,0 +1,38 @@
+HyperOS 3 shennong — XM property indices (from qti_battery_charger.ko, opcode 0x50/0x51 words[1])
+Confirmed by one-to-one match of each sysfs show/store to its mov xN,#0xNN00000000 property id.
+
+real_type            9
+verify_process       20     (get+set)  result field +80
+request_vdm_cmd      21..   (set; cmd enum 1..8 -> USBPD VDM)  result field +84/88/92
+current_state        29
+adapter_id           30
+adapter_svid         31
+pd_verifed           32     (get+set)  result field +128
+pdo2                 33
+cp_mode              36     (get+set)
+bq2597x_chip_ok      37
+bq2597x_slave_chip_ok 38
+bq2597x_bus_current  39
+bq2597x_slave_bus_current 40
+bq2597x_bus_delta    41
+bq2597x_bus_voltage  42
+bq2597x_battery_present 43
+bq2597x_battery_voltage 45
+bq2597x_battery_temp 46
+fastchg_mode         55
+apdo_max             61
+power_max            62
+
+connector_temp       2
+connector_temp2      4
+authentic            5
+chip_ok              7
+ntc_alarm            12
+soc_decimal          58
+soc_decimal_rate     59
+
+quick_charge_type: computed in HLOS from props {1,2,5,6,11,32,62}; not a single XM read.
+
+NOTE: these differ from shennong-u-oss after index 2 (there pd_verifed=20, power_max=47).
+The on-screen battmgr=4 iOS dump now reads cleanly against this table:
+  prop 2 = connector_temp, 4 = connector_temp2 (250 = 25.0C), 12 = ntc_alarm, 59 = soc_decimal_rate.

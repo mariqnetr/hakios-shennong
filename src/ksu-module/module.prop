@@ -1,0 +1,6 @@
+id=hackios_menu
+name=HackiOS boot menu
+version=1
+versionCode=1
+author=shennong port
+description=After Android has come up, makes slot b active again, so the next start shows the boot menu. Disable this module to stay in Android.

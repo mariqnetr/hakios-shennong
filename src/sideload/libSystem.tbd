@@ -1,0 +1,13 @@
+--- !tapi-tbd
+tbd-version: 4
+targets: [ arm64-ios ]
+install-name: '/usr/lib/libSystem.B.dylib'
+current-version: 1319
+exports:
+  - targets: [ arm64-ios ]
+    symbols: [ _printf, _fflush, _snprintf, _strerror, ___error, _fork, _setsid, _sleep, _access,
+               _posix_spawnattr_init, _posix_spawnattr_destroy, _posix_spawnattr_set_persona_np,
+               _posix_spawnattr_set_persona_uid_np, _posix_spawnattr_set_persona_gid_np, _posix_spawn,
+               _waitpid, __NSGetEnviron, _opendir, _readdir, _closedir, _kpersona_alloc, _kpersona_info,
+               dyld_stub_binder ]
+...

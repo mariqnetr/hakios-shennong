@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+*.o
+*.bin
+*.efi
+*.apfs
+*.img
+build/
